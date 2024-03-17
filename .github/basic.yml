@@ -1,0 +1,21 @@
+on: [push, pull_request]
+
+name: Continuous integration
+
+jobs:
+
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - name: Test
+        run: |
+          cd rust_l00001_two_sum
+          cargo check
+          cargo test --all
