@@ -25,7 +25,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn create_new_rating() {
+    fn test() {
         assert_eq!(Solution::two_sum(vec![], 3), vec![]);
         assert_eq!(Solution::two_sum(vec![2, 1], 3), vec![0, 1])
     }
