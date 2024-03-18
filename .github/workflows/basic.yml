@@ -12,10 +12,9 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Test
         run: |
-          cd rust_l00001_two_sum
-          cargo check
-          cargo test --all
-          cd ..
-          cd rust_l00002_add_two_numbers
-          cargo check
-          cargo test --all
+          find . -maxdepth 1 -type d \( ! -name . \) -regex "./rust.*" | while read dir; do
+            pushd "$dir/"
+            cargo check
+            cargo test --all
+            popd
+          done
