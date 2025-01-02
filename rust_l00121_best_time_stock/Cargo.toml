@@ -1,0 +1,6 @@
+[package]
+name = "rust_l00121_best_time_stock"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
